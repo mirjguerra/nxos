@@ -1,0 +1,6 @@
+---
+switches:
+  - name: AG1-GT3-BF07-PSC
+    url: https://10.190.1.171
+  - name: AG1-GT3-BF08-PSC
+    url: https://10.190.1.172

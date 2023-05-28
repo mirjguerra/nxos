@@ -1,0 +1,6 @@
+---
+switches:
+  - name: AG1-TB2-F31-PSC
+    url: https://10.190.33.171
+  - name: AG2-TB2-F31-PSC
+    url: https://10.190.33.172

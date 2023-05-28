@@ -1,0 +1,88 @@
+---
+acls:
+###-----------------------------VLAN656-----------------------------------------------
+  - name: vl676-in
+    entries:
+      #--DEFAULT--#
+      - seq: 1
+        remark: "icmp"
+      - seq: 2
+        action: permit
+        protocol: icmp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+      - seq: 3
+        remark: "retorno tcp"
+      - seq: 4
+        action: permit
+        protocol: tcp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        ack: true
+      - seq: 5
+        action: permit
+        protocol: tcp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        rst: true
+      #--INICIO--#
+
+  - name: vl676-out
+    entries:
+    #--DEFAULT--#
+      - seq: 1
+        remark: "icmp"
+      - seq: 2
+        action: permit
+        protocol: icmp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        #dst_port: 443
+      - seq: 3
+        remark: "retorno tcp"
+      - seq: 4
+        action: permit
+        protocol: tcp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        ack: true
+      - seq: 5
+        action: permit
+        protocol: tcp
+        src_prefix: 0.0.0.0
+        src_prefix_length: 0
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        rst: true
+      #--INICIO--#
+      - seq: 20
+        remark: "ALLOW OOB"
+      - seq: 21
+        action: permit
+        protocol: tcp
+        src_prefix: 10.190.0.0
+        src_prefix_length: 25
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        established: true
+        dst_port: 22
+      - seq: 22
+        action: permit
+        protocol: tcp
+        src_prefix: 10.190.32.0
+        src_prefix_length: 25
+        dst_prefix: 0.0.0.0
+        dst_prefix_length: 0
+        established: true
+        dst_port: 22
+###-----------------------------VLAN?-----------------------------------------------

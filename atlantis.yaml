@@ -1,0 +1,16 @@
+## atlantis.yaml file - This file overwrites the Server Side Repo Config section specfied in the values.yaml file
+  version: 3
+  projects:
+    - dir: /glete/.
+      workspace: glete
+      autoplan:
+        when_modified: [ "*" ]
+        enabled: false
+      terraform_version: v1.2.7
+
+    - dir: /tambore/.
+      workspace: tambore
+      autoplan:
+        when_modified: [ "*" ]
+        enabled: false
+      terraform_version: v1.2.7
