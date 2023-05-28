@@ -1,5 +1,6 @@
 # File that are going to be encrypted
 variables.tfvars.tf filter=git-crypt diff=git-crypt
+glete/nxos.tfvars filter=git-crypt diff=git-crypt
 
 # Making sure that .gitattributes and other git related files are neer encrypted.
 .gitattributes !filter !diff
